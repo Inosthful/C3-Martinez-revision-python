@@ -49,7 +49,7 @@ def scraper_pays_et_capitales(url):
                 capitale = capitale_element.text
             else:
                 capitale = "Capitale non trouvée"
-            print(f"Pays : {nom_pays} ")
+            print(f"Pays : {nom_pays.strip()} ")
             print(f"Capital : {capitale}")
 
 
