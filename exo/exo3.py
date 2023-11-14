@@ -39,8 +39,4 @@ def calculatrice():
     except Exception as e:
         print(f"Erreur lors de l'évaluation de l'expression : {e}")
 
-
-
-
-
 calculatrice()
