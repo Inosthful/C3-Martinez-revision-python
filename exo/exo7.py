@@ -1,21 +1,33 @@
-notes_eleves = {
-    'Lucas Smith': 24,
-    'Zlatan Ibramovic': 10,
-    'Syouli Prime': 80,
-    'Faker Goat': 98,
-    'Caliste LEC': 95,
-    'Alex Martin': 100,
-    'Elon Musk': 100,
+def countWords(test):
+    try:
+       
+        with open(test, 'r', encoding='utf-8') as fichier:
+            contenu = fichier.read()
+            nombre_mots = len(contenu.split())
+
+        return nombre_mots
+
+    except FileNotFoundError:
+        print(f"Le fichier '{test}' n'a pas été trouvé.")
+        return None
+    except Exception as e:
+        print(f"Une erreur s'est produite : {e}")
+        return None
     
-        
-    
-}
+def writeResult(fichierResultat, nbr):
+    try:
+        with open(fichierResultat, 'w', encoding='utf-8') as fichier_sortie:
+            fichier_sortie.write(f"Nombre de mots dans le fichier : {nbr}")
 
-note_maximale = max(notes_eleves.values())
+        print(f"Résultat écrit dans le fichier '{fichierResultat}'.")
 
-# Trouver les élèves avec la meilleure note
-meilleurs_eleves = [eleve for eleve, note in notes_eleves.items() if note == note_maximale]
+    except Exception as e:
+        print(f"Une erreur s'est produite lors de l'écriture du résultat : {e}")
 
 
-meilleur_eleve = meilleurs_eleves[0]
-print(f"L'élève avec la meilleure note est : {meilleur_eleve} avec la note {note_maximale}")
+test = 'text.txt'
+test2 = 'text2.txt'
+nombre_mots = countWords(test)
+
+if nombre_mots is not None:
+    writeResult(test2, nombre_mots)    
