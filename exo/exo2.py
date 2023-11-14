@@ -1,0 +1,8 @@
+inputUser = input("Saisir une phrase")
+inputUserUp = inputUser.upper()
+print(inputUserUp)
+inputUserLow = inputUser.lower()
+print(inputUserLow) 
+lengthInput = inputUser.split()
+length = len(lengthInput)
+print(length)
