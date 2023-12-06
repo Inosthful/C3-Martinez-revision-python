@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+<html>
+<head>
+    {% block content %}
+    <title>{{ car.marque|title }}</title>
+    {% endblock %}
+</head>
+<body>
+    {% block content2 %}
+    <div class="flex  flex-col text-center p-3 ">
+<h1 class="p-1">{{ car.marque|title }}</h1>
+<p class="p-1">Model: <strong>{{ car.model|title }} </strong> </p>
+<p class="p-1">Year: {{ car.year }}</p>
+<p class="p-1">Version: {{ car.version|title }}</p>
+
+</div>
+{% endblock %}
+
+</body>
+
+</html>

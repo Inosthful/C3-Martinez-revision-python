@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+<html lang="en">
+<head>
+    {% block content %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Ratings</title>
+    {% endblock %}
+</head>
+<body>
+    {% block content2 %}
+    <div class="flex items-center flex-col p-5">
+    <h1>Car Ratings</h1>
+    <ul>
+        {% for car in cars %}
+            <li class="p-1">{{ car.brand }} {{ car.model }} - Rating: {{ car.note }} ⭐ </li>
+        {% endfor %}
+    
+    </ul>
+</div>
+    {% endblock %}
+</body>
+</html>
