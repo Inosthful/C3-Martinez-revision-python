@@ -13,7 +13,7 @@ notes_eleves = {
 
 note_maximale = max(notes_eleves.values())
 
-# Trouver les élèves avec la meilleure note
+# eleve avec meilleure note
 meilleurs_eleves = [eleve for eleve, note in notes_eleves.items() if note == note_maximale]
 
 if len(meilleurs_eleves) == 1:
